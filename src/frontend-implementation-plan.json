@@ -1,0 +1,58 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Remove start screen inputs and enforce fixed player name \"Priyanshi\"",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Remove start/home personalization inputs and always greet the player as \"Priyanshi\" while keeping start progression unchanged.",
+      "acceptanceCriteria": [
+        "On the start/home screen, there are no visible input controls for entering a name or other personalization text.",
+        "The start/home screen heading always greets the user as \"Priyanshi\" (i.e., it does not change based on any user input or saved profile).",
+        "Clicking the start button still progresses to the next level as before."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/game/levels/StartLevel.tsx",
+          "operation": "modify",
+          "description": "Remove all personalization form UI (name input, dedication textarea, labels) and any related local state/handlers; make the greeting always use DEFAULT_NAME (\"Priyanshi\") with no user input; keep the Start button behavior and auth button behavior working as before."
+        },
+        {
+          "path": "frontend/src/game/LoveGame.tsx",
+          "operation": "modify",
+          "description": "Update StartLevel wiring/props as needed to match the simplified StartLevel implementation (no longer driven by editable personalization inputs), while keeping navigation to the next level unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Force the in-game name to always be \"Priyanshi\" across state initialization, hydration from saved progress, and downstream displays (bonus/victory/keepsake).",
+      "acceptanceCriteria": [
+        "After login and hydration from backend progress, the in-game name remains \"Priyanshi\" (saved name values do not override it).",
+        "Victory screen and keepsake card display \"Priyanshi\" as the name."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/game/useLoveGameState.ts",
+          "operation": "modify",
+          "description": "Enforce a fixed name (DEFAULT_NAME) throughout game state: initialize personalization.name to DEFAULT_NAME, override any hydrated savedProgress.name with DEFAULT_NAME, ensure any progress persistence uses DEFAULT_NAME for the name, and ensure resets cannot result in a different name being stored in state."
+        },
+        {
+          "path": "frontend/src/game/levels/VictoryLevel.tsx",
+          "operation": "modify",
+          "description": "Ensure the victory heading always renders DEFAULT_NAME (\"Priyanshi\") regardless of any personalization.name value passed in."
+        },
+        {
+          "path": "frontend/src/game/components/KeepsakeCard.tsx",
+          "operation": "modify",
+          "description": "Ensure the keepsake card (and downloaded PNG name text via exportKeepsakePng) always uses DEFAULT_NAME (\"Priyanshi\") regardless of any personalization.name value passed in."
+        },
+        {
+          "path": "frontend/src/game/levels/BonusSurpriseLevel.tsx",
+          "operation": "modify",
+          "description": "If the bonus screen renders the player's name anywhere, force it to display DEFAULT_NAME (\"Priyanshi\") so the bonus/victory/keepsake flow cannot show a different name."
+        }
+      ]
+    }
+  ]
+}

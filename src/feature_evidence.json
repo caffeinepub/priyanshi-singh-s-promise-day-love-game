@@ -1,0 +1,47 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-remove-the-start-home-screen-personalization-text-input-ui-and-make-the-displayed-player-name-always-be-the-fixed-value-priyanshi-with-no-user-input-required",
+      "featureTitle": "Remove the start (home) screen personalization text input UI and make the displayed player name always be the fixed value \"Priyanshi\" with no user input required.",
+      "files": [
+        "frontend/src/game/LoveGame.tsx",
+        "frontend/src/game/levels/StartLevel.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-game-state-uses-the-fixed-name-priyanshi-consistently-including-when-hydrating-from-saved-progress-so-downstream-screens-bonus-victory-keepsake-cannot-display-a-different-name",
+      "featureTitle": "Ensure the game state uses the fixed name \"Priyanshi\" consistently (including when hydrating from saved progress) so downstream screens (bonus/victory/keepsake) cannot display a different name.",
+      "files": [
+        "frontend/src/game/components/KeepsakeCard.tsx",
+        "frontend/src/game/levels/BonusSurpriseLevel.tsx",
+        "frontend/src/game/levels/VictoryLevel.tsx",
+        "frontend/src/game/useLoveGameState.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

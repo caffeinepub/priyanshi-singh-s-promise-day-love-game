@@ -1,0 +1,54 @@
+{
+  "kind": "build_request",
+  "title": "Remove start screen text inputs and fix player name to Priyanshi",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Remove the start (home) screen personalization text input UI and make the displayed player name always be the fixed value \"Priyanshi\" with no user input required.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "All thing good just remove the home text box and name is Priyanshi fixed no input needed and rest game is good"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On the start/home screen, there are no visible input controls for entering a name or other personalization text.",
+        "The start/home screen heading always greets the user as \"Priyanshi\" (i.e., it does not change based on any user input or saved profile).",
+        "Clicking the start button still progresses to the next level as before."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Ensure the game state uses the fixed name \"Priyanshi\" consistently (including when hydrating from saved progress) so downstream screens (bonus/victory/keepsake) cannot display a different name.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "name is Priyanshi fixed no input needed"
+        ]
+      },
+      "acceptanceCriteria": [
+        "After login and hydration from backend progress, the in-game name remains \"Priyanshi\" (saved name values do not override it).",
+        "Victory screen and keepsake card display \"Priyanshi\" as the name."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (shadcn components are read-only in this project).",
+    "Do not edit immutable paths listed in SYSTEM_CONTEXT (e.g., frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx).",
+    "Backend must remain a single Motoko actor in backend/main.mo; add migration.mo only if state schema changes (not expected for this request)."
+  ],
+  "nonGoals": [
+    "Do not change any other game levels, gameplay mechanics, scoring, animations, or visual assets beyond removing the start screen text input(s) and fixing the name."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

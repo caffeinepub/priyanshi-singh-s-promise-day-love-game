@@ -1,0 +1,62 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-12T13:22:42.458Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Remove the start (home) screen personalization text input UI and make the displayed player name always be the fixed value \"Priyanshi\" with no user input required.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/game/levels/StartLevel.tsx",
+          "frontend/src/game/LoveGame.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/game/levels/StartLevel.tsx",
+          "frontend/src/game/LoveGame.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Ensure the game state uses the fixed name \"Priyanshi\" consistently (including when hydrating from saved progress) so downstream screens (bonus/victory/keepsake) cannot display a different name.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/game/useLoveGameState.ts",
+          "frontend/src/game/levels/VictoryLevel.tsx",
+          "frontend/src/game/components/KeepsakeCard.tsx",
+          "frontend/src/game/levels/BonusSurpriseLevel.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/game/useLoveGameState.ts",
+          "frontend/src/game/levels/VictoryLevel.tsx",
+          "frontend/src/game/components/KeepsakeCard.tsx",
+          "frontend/src/game/levels/BonusSurpriseLevel.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/game/LoveGame.tsx",
+    "frontend/src/game/components/KeepsakeCard.tsx",
+    "frontend/src/game/levels/BonusSurpriseLevel.tsx",
+    "frontend/src/game/levels/StartLevel.tsx",
+    "frontend/src/game/levels/VictoryLevel.tsx",
+    "frontend/src/game/useLoveGameState.ts",
+    "frontend/src/game/utils/exportKeepsakePng.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

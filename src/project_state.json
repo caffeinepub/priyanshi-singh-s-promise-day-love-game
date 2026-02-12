@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Project named Priyanshi; game mostly complete with a requested UI change to remove the home screen text box and keep the name fixed (no user input).",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-remove-the-start-home-screen-personalization-text-input-ui-and-make-the-displayed-player-name-always-be-the-fixed-value-priyanshi-with-no-user-input-required",
+      "title": "Remove the start (home) screen personalization text input UI and make the displayed player name always be the fixed value \"Priyanshi\" with no user input required.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-game-state-uses-the-fixed-name-priyanshi-consistently-including-when-hydrating-from-saved-progress-so-downstream-screens-bonus-victory-keepsake-cannot-display-a-different-name",
+      "title": "Ensure the game state uses the fixed name \"Priyanshi\" consistently (including when hydrating from saved progress) so downstream screens (bonus/victory/keepsake) cannot display a different name.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Remove the home screen text box and use a fixed name 'Priyanshi' (no user input).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Priyanshi",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

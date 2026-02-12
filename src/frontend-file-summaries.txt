@@ -1,0 +1,22 @@
+{
+  "frontend/src/App.tsx": "Main application entry point that wraps LoveGame with QueryClientProvider for React Query state management.",
+  "frontend/src/game/types.ts": "Defines TypeScript types for game state including personalization fields, game levels (now including 'bonus'), promises text, and configuration constants.",
+  "frontend/src/game/useLoveGameState.ts": "Game state management hook that enforces DEFAULT_NAME (\"Priyanshi\") throughout initialization, hydration from backend, persistence, and resets.",
+  "frontend/src/game/LoveGame.tsx": "Main game orchestrator that renders all five levels and wires state management, updated to remove setPersonalization prop from StartLevel.",
+  "frontend/src/game/components/LevelTransition.tsx": "Wrapper component providing smooth fade-in-scale animation transitions between game levels.",
+  "frontend/src/game/components/FloatingHearts.tsx": "Decorative component rendering animated floating hearts that rise from bottom to top across the screen.",
+  "frontend/src/game/components/HeartBurst.tsx": "Animated heart burst effect component triggered when unlocking promise cards, with radial explosion animation.",
+  "frontend/src/game/components/ConfettiHearts.tsx": "Confetti hearts falling animation overlay used on the victory screen for celebration effect.",
+  "frontend/src/game/levels/StartLevel.tsx": "Start screen with fixed greeting \"Welcome Priyanshi ❤️\", no input fields, includes start button and auth controls.",
+  "frontend/src/game/levels/CatchHeartLevel.tsx": "Level 2 interactive catch-the-heart game with score tracking, audio/haptic feedback integration, and keyboard accessibility.",
+  "frontend/src/game/levels/PromiseRevealLevel.tsx": "Level 3 promise reveal with flip-card animations, heart burst effects, background music control, feedback integration, and completion button leading to bonus level.",
+  "frontend/src/game/levels/VictoryLevel.tsx": "Victory screen that always displays DEFAULT_NAME (\"Priyanshi\") in the congratulations heading regardless of personalization state.",
+  "frontend/src/index.css": "Complete styling with romantic pastel theme, personalization form styles, bonus level envelope/letter animations, keepsake card styles, accessibility focus states, and responsive design.",
+  "frontend/index.html": "HTML entry point with Pacifico and Poppins Google Fonts preloaded and game title in head.",
+  "frontend/src/hooks/useQueries.ts": "Re-exports user progress hooks for centralized import throughout the application.",
+  "frontend/src/game/levels/BonusSurpriseLevel.tsx": "Bonus surprise level with envelope animation that always uses DEFAULT_NAME (\"Priyanshi\") in compliments.",
+  "frontend/src/game/components/KeepsakeCard.tsx": "Keepsake card component that always displays DEFAULT_NAME (\"Priyanshi\") and passes it to the PNG export function.",
+  "frontend/src/game/utils/exportKeepsakePng.ts": "PNG export utility that always renders DEFAULT_NAME (\"Priyanshi\") on the keepsake certificate regardless of the name parameter.",
+  "frontend/src/game/hooks/useFeedback.ts": "Custom hook providing audio feedback (Web Audio API tones) and haptic vibration for game interactions with enable/disable toggle.",
+  "frontend/src/hooks/useUserProgress.ts": "React Query hooks for fetching and saving user progress (name, dedication, completion status) to backend when authenticated via Internet Identity."
+}
